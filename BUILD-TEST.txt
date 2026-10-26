@@ -1,0 +1,10 @@
+make: Entering directory '/workspace/scratch/a120c468c448/minerva-standalone'
+mkdir -p build
+/workspace/scratch/a120c468c448/toolchain/root/usr/bin/m68k-linux-gnu-as -m68000 --register-prefix-optional --bitwise-or -I . -o build/minerva.o minerva.s
+/workspace/scratch/a120c468c448/toolchain/root/usr/bin/m68k-linux-gnu-ld -Ttext=0 -e 0x410 -Map build/minerva.map -o build/minerva.elf build/minerva.o
+/workspace/scratch/a120c468c448/toolchain/root/usr/bin/m68k-linux-gnu-objcopy -O binary build/minerva.elf build/minerva.rom
+/workspace/scratch/a120c468c448/toolchain/root/usr/bin/m68k-linux-gnu-nm -n build/minerva.elf > build/minerva.symbols
+/workspace/scratch/a120c468c448/toolchain/root/usr/bin/m68k-linux-gnu-objdump -d build/minerva.elf > build/minerva.disassembly.txt
+cmp reference/min198.rom build/minerva.rom
+PASS: all 48822 bytes match the original Minerva 1.98 ROM.
+make: Leaving directory '/workspace/scratch/a120c468c448/minerva-standalone'
