@@ -106,3 +106,11 @@ Layout-changing ROM edits may require updating that emulator profile too.
 
 Existing Minerva source notices remain applicable. This build-system change
 does not assign a new license to the original material.
+
+
+Origin
+------
+
+This port is based on the original Minerva 1.98 source code written by Laurence Reeves at QView, which was officially open-sourced under the GNU General Public License (GPL). 
+
+Original source archives can be found via the Sinclair QL Preservation resources on sinclairql.net, with modern upstream fixes maintained by Marcel Kilgus.
